@@ -7,7 +7,7 @@
     <a href="/challenge">Challange</a> 
     <a style="float: right; " href="/login">Log out</a>    
     <a style="float: right; " href="/change_password/{{session('userId')}}">Change Password</a> 
-    <a style="float: right; " href="/user/{{session('userId')}}">Update profile</a> 
+    <a style="float: right; " href="/user/detail/{{session('userId')}}">Update profile</a> 
     
 </div>
 

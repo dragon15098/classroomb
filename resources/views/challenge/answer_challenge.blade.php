@@ -27,18 +27,14 @@
                         </b>
                     </label>
                     <textarea type="text" disabled id="content" name="hint" placeholder="Write some hint.." style="height:100px">{{$hint}}</textarea>
-                    <input type="hidden" name="action" value="submit">
-                    <input type="hidden" name="id" value="{{$id}}">
                     <label>
                         <b>
                             Answer
                         </b>
                     </label>
-                    <input type="text" name="answer">
+                    <a href='/challenge/download/{{$id}}' download>Download</a>
                     <br>
-                    <button formaction="/challenge/submit" type="submit" style="float: right;" class="btn btn_action">Submit answer</button>
                 </div>
-
             </form>
         </div>
     </div>

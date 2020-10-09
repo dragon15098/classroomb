@@ -6,27 +6,28 @@
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./../view/home/home.css">
-    <link rel="stylesheet" href="./../view/challenge/add_challenge.css">
+
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/add_challenge.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <?php include_once "./../view/header.php";  ?>
-    <?php include_once "./../view/navbar.php"; ?>
+    @include("header")
+    @include("navbar")
 
     <div class="row">
-        <?php include_once "./../view/side.php"; ?>
+        @include("side")
         <div class="main">
-            <form action="C_AddJob.php" method="post" enctype="multipart/form-data">
-                <div class="container">
+            <form action="/challenge/create"  method="POST" enctype="multipart/form-data">
+            @csrf    
+            <div class="container">
                     <h1>Add Challenge</h1>
-
                     <textarea type="text" id="content" name="hint" placeholder="Write some hint.." style="height:100px"></textarea>
                     <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="hidden" name="action" value="submit">
+                 
                     <br>
 
-                    <button method="POST" formaction="C_AddChallenge.php" type="submit" style="float: right;" class="btn btn_action">Create challenge</button>
+                    <button method="POST"  type="submit" style="float: right;" class="btn btn_action">Create challenge</button>
                 </div>
 
             </form>

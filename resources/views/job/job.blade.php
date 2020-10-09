@@ -42,7 +42,6 @@
                 </tr>
                 @endforeach
             </table>
-            @include('page_footer')
         </div>
     </div>
     </div>

@@ -12,4 +12,6 @@ class UserMessage extends Model
     protected $fromUserId;
     protected $toUserId;
     protected $content;
+    public $timestamps = false;
+
 }

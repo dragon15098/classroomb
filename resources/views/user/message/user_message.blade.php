@@ -47,7 +47,7 @@
                         <i onclick='document.forms["deleteForm{{$message->id}}"].submit();' class='far fa-trash-alt icon-action'></i>
                     </form>
                     <br>
-                    <i  class='fas fa-marker icon-action' onclick='changeView(1)'></i>
+                    <i  class='fas fa-marker icon-action' onclick='changeView({{$message->id}})'></i>
                     <br>
                     <form action="/user/message/update" method="post">
                         @csrf
@@ -59,7 +59,7 @@
                     </form>
                 </div>
                 @else
-                <div class='container_message darker'>
+                <div style="float: left" class='container_message darker'>
                     <p>{{$message->content}}</p>
                 </div>
                 @endif

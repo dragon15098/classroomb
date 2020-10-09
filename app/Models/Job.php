@@ -11,6 +11,7 @@ class Job extends Model
     protected $id;
     protected $jobName;
     protected $filePath;
+    public $timestamps = false;
 
     /**
      * Get the comments for the blog post.

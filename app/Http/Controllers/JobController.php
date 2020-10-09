@@ -28,19 +28,22 @@ class JobController extends BaseController
         return redirect('job');
     }
 
+    function downloadJobFile(Request $request, $id)
+    {
+        $job = Job::find($id);
+        return Storage::download($job->filePath);
+    }
+
     function downloadMyFile(Request $request, $jobId)
     {   
         return $this->downloadUserFile($request, $jobId, session('userId'));
     }
-
 
     function downloadUserFile(Request $request,  $jobId, $userId)
     {
         $userFile = UserJobFile::where('userId', $userId)->where('jobId', $jobId)->first();
         return Storage::download($userFile->filePath);
     }
-
-
 
     public function submitJob(Request $request)
     {

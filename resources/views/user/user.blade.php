@@ -38,7 +38,7 @@
                     <td> {{ $user->id }} </td>
                     <td> {{ $user->name }} </td>
                     <td>
-                        <button onclick="location.href='./user/{{ $user->id }}'" class="button button_action">View detail
+                        <button onclick="location.href='./user/detail/{{ $user->id }}'" class="button button_action">View detail
                         </button>
                         @if (session('type') === 1)
                         <button onclick="location.href='./change_password/{{ $user->id }}'" class="button button_action">Change password</button>
@@ -48,7 +48,6 @@
                 </tr>
                 @endforeach
             </table>
-            @include('page_footer')
         </div>
     </div>
     <div class="footer">

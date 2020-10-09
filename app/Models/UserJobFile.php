@@ -12,5 +12,9 @@ class UserJobFile extends Model
     protected $userId;
     protected $jobId;
     protected $filePath;
+    public $timestamps = false;
 
+    public function user(){
+        return $this->belongsTo('App\Models\User', 'userId');
+    }
 }

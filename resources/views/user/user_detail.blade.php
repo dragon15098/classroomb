@@ -39,9 +39,9 @@
 
                     <input type="hidden" name="userId" id="userId" value="{{ $user->id}}">
 
-                    <a href="message/{{ $user->id }}" style="float: left;" class="btn btn_action">Send Message</a>
+                    <a href="/user/message/{{ $user->id }}" style="float: left;" class="btn btn_action">Send Message</a>
                     @if (session('type') === 1 || session('userId') === $user->id )
-                    <button method='POST' formaction='/user/update/' type='submit' style='float: right;' class='btn btn_action'>Update Info</button>
+                    <button method='POST' formaction='/update/user' type='submit' style='float: right;' class='btn btn_action'>Update Info</button>
                     @endif
                 </div>
 

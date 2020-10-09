@@ -11,7 +11,7 @@
     @foreach ($userJobFiles as $userFile)
     <tr>
         <td> {{$userFile->id}}</td>
-        <td>{{$userFile->id}}</td>
+        <td>{{$userFile->user->name}}</td>
         <td>
             <a href='/user_file/download/{{$job->id}}/{{$userFile->userId}}' download class='button button_action'>Download</a>
         </td>

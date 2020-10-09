@@ -38,7 +38,7 @@ class UserController extends BaseController
             $user->save();
             return redirect('user');
         }
-        return redirect('create_user');
+        return redirect('/create_user');
     }
 
     function updateInfo(Request $request)
@@ -51,7 +51,7 @@ class UserController extends BaseController
             $user->name = $request->get('name');
             $user->save();
         }
-        return redirect('user');
+        return redirect('/user');
     }
 
     function updatePassword(Request $request)
@@ -60,9 +60,9 @@ class UserController extends BaseController
             $user = User::find($request->get('userId'));
             $user->password = Hash::make($request->get('password'));
             $user->save();
-            return redirect('user');
+            return redirect('/user');
         }
-        return redirect('user');
+        return redirect('/user');
     }
 
     function deleteUser(Request $request, $id)
@@ -71,6 +71,6 @@ class UserController extends BaseController
         if ($user !== null) {
             User::destroy($id);
         }
-        return redirect('user');
+        return redirect('/user');
     }
 }

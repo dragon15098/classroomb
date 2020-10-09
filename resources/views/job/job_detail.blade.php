@@ -17,24 +17,24 @@
     <div class="row">
         @include("side")
         <div class="main">
-          @includeWhen(session('type') === 1, "job.job_table")
-
+            @includeWhen($currentUserFile == null, "job.job_table")
             <h2>Job detail</h2>
             <div class="container">
                 <label for="Name"><b>Job name</b></label>
-                <p name="jobName" id="name">{{$job->jobName}}</p>
+                <p name="jobName" id="name"></p>
 
                 <label for="Name"><b>File job</b></label>
                 <br>
                 <br>
-                <a href="/job/download/{{$job->id}}" download >Download</a>
+                <a href="/job/download/job_file/{{$job->id}}"
+                         download>Download</a>
                 <br>
                 <br>
             </div>
-            @if (session('type') === 0) 
-                @includeWhen( $currentUserFile != null, "job.has_submit_job")
-                @includeWhen( $currentUserFile == null, "job.submit_job")
-            @endif 
+            @if (session("type") === 0)
+            @includeWhen($currentUserFile != null, "job.has_submit_job")
+            @includeWhen($currentUserFile == null, "job.submit_job")
+            @endif
         </div>
     </div>
     <div class="footer">
